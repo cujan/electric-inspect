@@ -71,17 +71,7 @@
                                                    placeholder="e.g., Voltage (V), Serial Number"
                                                    class="w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                                    required>
-                                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Display name for inspectors</p>
-                                        </div>
-                                        <div>
-                                            <label class="flex items-center">
-                                                <input type="checkbox"
-                                                       name="parameters[{{ $index }}][is_required]"
-                                                       value="1"
-                                                       {{ old('parameters.' . $index . '.is_required', $parameter->is_required) ? 'checked' : '' }}
-                                                       class="rounded border-gray-300 dark:border-gray-700 text-blue-600 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                                                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">{{ __('Required field') }}</span>
-                                            </label>
+                                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Display name for inspectors (all parameters are optional by default)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,16 +125,7 @@
                                    placeholder="e.g., Voltage (V), Serial Number"
                                    class="w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                    required>
-                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Display name for inspectors</p>
-                        </div>
-                        <div>
-                            <label class="flex items-center">
-                                <input type="checkbox"
-                                       name="parameters[${parameterIndex}][is_required]"
-                                       value="1"
-                                       class="rounded border-gray-300 dark:border-gray-700 text-blue-600 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">{{ __('Required field') }}</span>
-                            </label>
+                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Display name for inspectors (all parameters are optional by default)</p>
                         </div>
                     </div>
                 </div>
