@@ -13,7 +13,7 @@ class PdfExportService
      */
     public function generateInspectionReport(Inspection $inspection): \Barryvdh\DomPDF\PDF
     {
-        $inspection->load(['customer', 'equipment', 'inspector', 'files', 'organization']);
+        $inspection->load(['customer', 'equipment', 'inspector', 'files', 'organization', 'parameterValues.parameter']);
 
         $data = [
             'inspection' => $inspection,
@@ -21,6 +21,7 @@ class PdfExportService
             'equipment' => $inspection->equipment,
             'inspector' => $inspection->inspector,
             'organization' => $inspection->organization,
+            'parameterValues' => $inspection->parameterValues,
             'generatedAt' => now(),
         ];
 

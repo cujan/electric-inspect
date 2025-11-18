@@ -362,6 +362,21 @@
         </div>
     </div>
 
+    <!-- Inspection Parameters -->
+    @if($parameterValues && $parameterValues->count() > 0)
+    <div class="section">
+        <div class="section-title">Inspection Parameters</div>
+        <div class="info-grid">
+            @foreach($parameterValues as $paramValue)
+            <div class="info-row">
+                <div class="info-label">{{ $paramValue->parameter->label }}:</div>
+                <div class="info-value">{{ $paramValue->value ?: 'N/A' }}</div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    @endif
+
     <!-- Notes -->
     @if($inspection->notes)
     <div class="section">
