@@ -57,7 +57,7 @@
 
                         <div class="sm:col-span-2">
                             <x-label for="inspection_type" value="{{ __('Inspection Type') }}" />
-                            <x-input id="inspection_type" class="mt-1 block w-full" type="text" name="inspection_type" :value="old('inspection_type')" placeholder="e.g., Annual Safety Inspection" />
+                            <x-input id="inspection_type" class="mt-1 block w-full" type="text" name="inspection_type" :value="old('inspection_type')" placeholder="e.g., Annual Safety Inspection" required />
                             <x-error for='inspection_type' />
                         </div>
 
