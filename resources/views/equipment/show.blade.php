@@ -20,7 +20,7 @@
 
         <div class="flex justify-between items-start mb-6">
             <div>
-                <x-heading>{{ $equipment->equipment_type }}</x-heading>
+                <x-heading>{{ $equipment->equipment_type }}@if($equipment->name) - {{ $equipment->name }}@endif</x-heading>
                 <x-text class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     {{ $equipment->manufacturer }} {{ $equipment->model }}
                 </x-text>
@@ -53,6 +53,12 @@
                                 <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('Type') }}</dt>
                                 <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $equipment->equipment_type }}</dd>
                             </div>
+                            @if ($equipment->name)
+                                <div>
+                                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('Name') }}</dt>
+                                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $equipment->name }}</dd>
+                                </div>
+                            @endif
                             <div>
                                 <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('Status') }}</dt>
                                 <dd class="mt-1">

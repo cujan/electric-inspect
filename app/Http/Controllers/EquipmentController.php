@@ -21,6 +21,7 @@ class EquipmentController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('equipment_type', 'like', "%{$search}%")
+                  ->orWhere('name', 'like', "%{$search}%")
                   ->orWhere('serial_number', 'like', "%{$search}%")
                   ->orWhere('location', 'like', "%{$search}%")
                   ->orWhere('manufacturer', 'like', "%{$search}%");
@@ -64,6 +65,7 @@ class EquipmentController extends Controller
             'customer_id' => 'required|exists:customers,id',
             'equipment_type_id' => 'required|exists:equipment_types,id',
             'equipment_type' => 'required|string|max:255',
+            'name' => 'nullable|string|max:255',
             'manufacturer' => 'nullable|string|max:255',
             'model' => 'nullable|string|max:255',
             'serial_number' => 'nullable|string|max:255',
@@ -113,6 +115,7 @@ class EquipmentController extends Controller
             'customer_id' => 'required|exists:customers,id',
             'equipment_type_id' => 'required|exists:equipment_types,id',
             'equipment_type' => 'required|string|max:255',
+            'name' => 'nullable|string|max:255',
             'manufacturer' => 'nullable|string|max:255',
             'model' => 'nullable|string|max:255',
             'serial_number' => 'nullable|string|max:255',

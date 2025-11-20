@@ -87,7 +87,7 @@
                                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
                                     <td class="px-6 py-4">
                                         <div class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                                            {{ $item->equipment_type }}
+                                            {{ $item->equipment_type }}@if($item->name) - {{ $item->name }}@endif
                                         </div>
                                         <div class="text-sm text-gray-500 dark:text-gray-400">
                                             @if ($item->manufacturer || $item->model)

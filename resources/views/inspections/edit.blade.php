@@ -269,7 +269,7 @@
                         customerEquipment.forEach(([id, data]) => {
                             const option = document.createElement('option');
                             option.value = id;
-                            option.textContent = data.equipment_type;
+                            option.textContent = data.name ? `${data.equipment_type} - ${data.name}` : data.equipment_type;
                             // Re-select if it was previously selected
                             if (id == currentEquipment) {
                                 option.selected = true;

@@ -102,6 +102,7 @@ class InspectionController extends Controller
                 $item->id => [
                     'customer_id' => $item->customer_id,
                     'equipment_type' => $item->equipment_type,
+                    'name' => $item->name,
                     'equipment_type_id' => $item->equipment_type_id,
                     'parameters' => $parameters
                 ]
@@ -195,6 +196,7 @@ class InspectionController extends Controller
                 $item->id => [
                     'customer_id' => $item->customer_id,
                     'equipment_type' => $item->equipment_type,
+                    'name' => $item->name,
                     'equipment_type_id' => $item->equipment_type_id,
                     'parameters' => $parameters
                 ]

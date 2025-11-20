@@ -16,6 +16,7 @@ class Equipment extends Model
         'customer_id',
         'equipment_type_id',
         'equipment_type',
+        'name',
         'manufacturer',
         'model',
         'serial_number',

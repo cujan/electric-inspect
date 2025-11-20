@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="text-sm text-gray-500 dark:text-gray-400">
                                             <a href="{{ route('equipment.show', $inspection->equipment) }}" class="hover:text-gray-700 dark:hover:text-gray-300">
-                                                {{ $inspection->equipment->equipment_type }}
+                                                {{ $inspection->equipment->equipment_type }}@if($inspection->equipment->name) - {{ $inspection->equipment->name }}@endif
                                             </a>
                                         </div>
                                     </td>

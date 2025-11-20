@@ -150,7 +150,7 @@
                         customerEquipment.forEach(([id, data]) => {
                             const option = document.createElement('option');
                             option.value = id;
-                            option.textContent = data.equipment_type;
+                            option.textContent = data.name ? `${data.equipment_type} - ${data.name}` : data.equipment_type;
                             equipmentSelect.appendChild(option);
                         });
                     } else {

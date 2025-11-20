@@ -53,6 +53,13 @@
                         </div>
 
                         <input type="hidden" id="equipment_type" name="equipment_type" value="{{ old('equipment_type') }}" />
+
+                        <div class="sm:col-span-2">
+                            <x-label for="name" value="{{ __('Equipment Name') }}" />
+                            <x-input id="name" class="mt-1 block w-full" type="text" name="name" :value="old('name')" placeholder="e.g., Main Panel A, Transformer Unit 1" />
+                            <x-error for='name' />
+                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ __('Optional: Give this equipment a unique name to distinguish it from others of the same type') }}</p>
+                        </div>
                         @else
                         <div class="sm:col-span-2">
                             <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
