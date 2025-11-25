@@ -1,0 +1,60 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Dependencies
+node_modules
+vendor
+
+# Testing
+tests
+phpunit.xml
+
+# Documentation
+*.md
+docs
+
+# Environment files
+.env
+.env.example
+.env.local
+.env.testing
+
+# Development files
+.editorconfig
+.php_cs
+.php_cs.cache
+.phpunit.result.cache
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+storage/logs/*.log
+npm-debug.log
+yarn-error.log
+
+# Backups
+backups
+
+# Build artifacts
+public/hot
+public/storage
+public/mix-manifest.json
+
+# Docker
+docker-compose.override.yml
+Dockerfile
+.dockerignore
+
+# Scripts (they're already copied)
+*.sh

@@ -22,3 +22,11 @@ yarn-error.log
 /.vscode
 /.zed
 CLAUDE.MD
+
+# Docker & Deployment
+backups/
+docker-compose.override.yml
+
+# SSL Certificates (keep .gitkeep)
+docker/ssl/*
+!docker/ssl/.gitkeep
