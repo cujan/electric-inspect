@@ -30,7 +30,7 @@ For detailed deployment instructions, see [DEPLOYMENT_INSTRUCTIONS.md](DEPLOYMEN
 
 ## 💻 Technology Stack
 
-- **Backend**: Laravel 12 (PHP 8.2)
+- **Backend**: Laravel 12 (PHP 8.3)
 - **Frontend**: Blade Templates with Tailwind CSS
 - **Database**: MySQL 8.0
 - **Server**: Nginx + PHP-FPM
