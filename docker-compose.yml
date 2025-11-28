@@ -51,7 +51,7 @@ services:
     networks:
       - app-network
 
-node:   # ← sem pridáš Node.js build službu
+  node:   # ← sem pridáš Node.js build službu
     image: node:20
     working_dir: /var/www
     volumes:
