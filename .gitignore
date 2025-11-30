@@ -1,32 +1,58 @@
-/.phpunit.cache
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/vendor
+
+# --- Laravel štandard ---
+/vendor/
+/node_modules/
+/public/build/
+/public/hot/
+/public/storage/
+storage/logs/
+bootstrap/cache/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/testing/
+storage/framework/views/
+
+# --- Prostredia & tajomstvá ---
 .env
 .env.backup
 .env.production
-.phpactor.json
+.env.testing
+.env.local
 .phpunit.result.cache
+/.phpunit.cache
+
+# --- IDE & tooling (bezpečné ignorovať aj v produkcii) ---
+/.idea/
+/.vscode/
+/.fleet/
+/.nova/
+/.zed/
+.phpactor.json
+
+# --- Lokálne dev / VM ---
 Homestead.json
 Homestead.yaml
-npm-debug.log
-yarn-error.log
-/auth.json
-/.fleet
-/.idea
-/.nova
-/.vscode
-/.zed
-CLAUDE.MD
 
-# Docker & Deployment
+# --- Logy & reporty ---
+npm-debug.log*
+yarn-error.log*
+*.log
+coverage/
+
+# --- Docker & deploy ---
 backups/
 docker-compose.override.yml
 
-# SSL Certificates (keep .gitkeep)
+# --- SSL certifikáty (ponechaj .gitkeep) ---
 docker/ssl/*
 !docker/ssl/.gitkeep
+
+# --- Ostatné ---
+/auth.json
+CLAUDE.MD
+
+# --- Lock súbory (POZOR: zvyčajne sa VERZUJÚ pre konzistentné buildy)
+# Ak ich nechceš verzovať, odkomentuj:
+# composer.lock
+# package-lock.json
+# yarn.lock
