@@ -13,7 +13,7 @@
                     <div class="flex aspect-square size-10 items-center justify-center rounded-md bg-blue-600 text-white">
                         <x-phosphor-lightning-fill width="24" height="24" />
                     </div>
-                    <span class="text-xl font-bold text-gray-900 dark:text-white">Electric Inspect</span>
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">Revízie elektroinštalácií</span>
                 </div>
 
                 @if (Route::has('login'))
@@ -24,7 +24,7 @@
                             </a>
                         @else
                             <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-                                Log in
+                                Prihlásenie
                             </a>
                         @endauth
                     </div>
