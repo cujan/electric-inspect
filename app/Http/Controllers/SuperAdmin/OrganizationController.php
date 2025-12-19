@@ -99,7 +99,7 @@ class OrganizationController extends Controller
         ]);
 
         return redirect()->route('super-admin.organizations.show', $organization)
-            ->with('success', 'Organization and admin account created successfully.');
+            ->with('success', __('Organization and admin account created successfully.'));
     }
 
     /**
@@ -165,7 +165,7 @@ class OrganizationController extends Controller
         $organization->update($validated);
 
         return redirect()->route('super-admin.organizations.show', $organization)
-            ->with('success', 'Organization updated successfully.');
+            ->with('success', __('Organization updated successfully.'));
     }
 
     /**
@@ -182,7 +182,7 @@ class OrganizationController extends Controller
         $organization->update(['is_active' => false]);
 
         return redirect()->route('super-admin.organizations.index')
-            ->with('success', 'Organization deactivated successfully.');
+            ->with('success', __('Organization deactivated successfully.'));
     }
 
     /**
@@ -224,6 +224,6 @@ class OrganizationController extends Controller
         ]);
 
         return redirect()->route('super-admin.organizations.show', $organization)
-            ->with('success', 'Admin user created successfully.');
+            ->with('success', __('Admin user created successfully.'));
     }
 }

@@ -86,7 +86,7 @@ class EquipmentTypeController extends Controller
         }
 
         return redirect()->route('equipment-types.show', $equipmentType)
-            ->with('success', 'Equipment type created successfully.');
+            ->with('success', __('Equipment type created successfully.'));
     }
 
     /**
@@ -177,7 +177,7 @@ class EquipmentTypeController extends Controller
         }
 
         return redirect()->route('equipment-types.show', $equipmentType)
-            ->with('success', 'Equipment type updated successfully.');
+            ->with('success', __('Equipment type updated successfully.'));
     }
 
     /**
@@ -198,12 +198,12 @@ class EquipmentTypeController extends Controller
         // Check if any equipment uses this type
         if ($equipmentType->equipment()->count() > 0) {
             return redirect()->route('equipment-types.index')
-                ->with('error', 'Cannot delete equipment type that is assigned to equipment.');
+                ->with('error', __('Cannot delete equipment type that is assigned to equipment.'));
         }
 
         $equipmentType->delete();
 
         return redirect()->route('equipment-types.index')
-            ->with('success', 'Equipment type deleted successfully.');
+            ->with('success', __('Equipment type deleted successfully.'));
     }
 }

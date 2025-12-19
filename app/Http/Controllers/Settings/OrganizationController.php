@@ -67,7 +67,7 @@ class OrganizationController extends Controller
         $organization->update($validated);
 
         return redirect()->route('settings.organization.edit')
-            ->with('success', 'Organization information updated successfully.');
+            ->with('success', __('Organization information updated successfully.'));
     }
 
     /**
@@ -90,6 +90,6 @@ class OrganizationController extends Controller
         }
 
         return redirect()->route('settings.organization.edit')
-            ->with('success', 'Logo removed successfully.');
+            ->with('success', __('Logo removed successfully.'));
     }
 }

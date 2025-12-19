@@ -139,7 +139,7 @@ class InspectionController extends Controller
         $inspection = Inspection::create($validated);
 
         return redirect()->route('inspections.show', $inspection)
-            ->with('success', 'Inspection scheduled successfully. Use Edit to fill parameters and results.');
+            ->with('success', __('Inspection scheduled successfully. Use Edit to fill parameters and results.'));
     }
 
     /**
@@ -286,7 +286,7 @@ class InspectionController extends Controller
         }
 
         return redirect()->route('inspections.show', $inspection)
-            ->with('success', 'Inspection updated successfully.');
+            ->with('success', __('Inspection updated successfully.'));
     }
 
     /**
@@ -303,7 +303,7 @@ class InspectionController extends Controller
         $inspection->delete();
 
         return redirect()->route('inspections.index')
-            ->with('success', 'Inspection deleted successfully.');
+            ->with('success', __('Inspection deleted successfully.'));
     }
 
     /**
@@ -319,7 +319,7 @@ class InspectionController extends Controller
         Storage::disk('public')->delete($file->file_path);
         $file->delete();
 
-        return back()->with('success', 'File deleted successfully.');
+        return back()->with('success', __('File deleted successfully.'));
     }
 
     /**
@@ -502,8 +502,8 @@ class InspectionController extends Controller
                     'tooltip' => $inspection->inspection_type . "\n" .
                                 $inspection->customer->company_name . "\n" .
                                 $inspection->equipment->equipment_type . "\n" .
-                                'Inspector: ' . $inspection->inspector->name . "\n" .
-                                'Status: ' . ucfirst($inspection->status),
+                                __('Inspector') . ': ' . $inspection->inspector->name . "\n" .
+                                __('Status') . ': ' . ucfirst($inspection->status),
                 ],
             ];
         });

@@ -77,7 +77,7 @@ class UserController extends Controller
         User::create($validated);
 
         return redirect()->route('users.index')
-            ->with('success', 'Technician created successfully.');
+            ->with('success', __('Technician created successfully.'));
     }
 
     /**
@@ -164,7 +164,7 @@ class UserController extends Controller
         $user->update($validated);
 
         return redirect()->route('users.index')
-            ->with('success', 'Technician updated successfully.');
+            ->with('success', __('Technician updated successfully.'));
     }
 
     /**
@@ -187,12 +187,12 @@ class UserController extends Controller
         // Prevent deleting if technician has inspections
         if ($user->inspections()->count() > 0) {
             return redirect()->route('users.index')
-                ->with('error', 'Cannot delete technician with existing inspections.');
+                ->with('error', __('Cannot delete technician with existing inspections.'));
         }
 
         $user->delete();
 
         return redirect()->route('users.index')
-            ->with('success', 'Technician deleted successfully.');
+            ->with('success', __('Technician deleted successfully.'));
     }
 }

@@ -81,7 +81,7 @@ class EquipmentController extends Controller
         $equipment = Equipment::create($validated);
 
         return redirect()->route('equipment.show', $equipment)
-            ->with('success', 'Equipment created successfully.');
+            ->with('success', __('Equipment created successfully.'));
     }
 
     /**
@@ -129,7 +129,7 @@ class EquipmentController extends Controller
         $equipment->update($validated);
 
         return redirect()->route('equipment.show', $equipment)
-            ->with('success', 'Equipment updated successfully.');
+            ->with('success', __('Equipment updated successfully.'));
     }
 
     /**
@@ -140,6 +140,6 @@ class EquipmentController extends Controller
         $equipment->delete();
 
         return redirect()->route('equipment.index')
-            ->with('success', 'Equipment deleted successfully.');
+            ->with('success', __('Equipment deleted successfully.'));
     }
 }

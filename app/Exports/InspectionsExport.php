@@ -41,19 +41,19 @@ class InspectionsExport implements FromCollection, WithHeadings, WithMapping, Wi
     public function headings(): array
     {
         return [
-            'Inspection ID',
-            'Inspection Type',
-            'Customer ID',
-            'Customer Name',
-            'Equipment Type',
-            'Equipment Location',
-            'Inspector',
-            'Inspection Date',
-            'Inspection Time',
-            'Status',
-            'Result',
-            'Notes',
-            'Created At',
+            __('Inspection ID'),
+            __('Inspection Type'),
+            __('Customer ID'),
+            __('Customer Name'),
+            __('Equipment Type'),
+            __('Equipment Location'),
+            __('Inspector'),
+            __('Inspection Date'),
+            __('Inspection Time'),
+            __('Status'),
+            __('Result'),
+            __('Notes'),
+            __('Created At'),
         ];
     }
 
@@ -102,7 +102,7 @@ class InspectionsExport implements FromCollection, WithHeadings, WithMapping, Wi
      */
     public function title(): string
     {
-        return 'Inspections';
+        return __('Inspections');
     }
 
     /**
