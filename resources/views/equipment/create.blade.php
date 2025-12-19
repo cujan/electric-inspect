@@ -20,7 +20,7 @@
                     <div>
                         <x-label for="customer_id" value="{{ __('Customer') }}" />
                         <x-select id="customer_id" name="customer_id" class="mt-1 block w-full" required>
-                            <option value="">Select a customer</option>
+                            <option value="">{{ __('Select a customer') }}</option>
                             @foreach ($customers as $customer)
                                 <option value="{{ $customer->id }}" {{ old('customer_id', request('customer_id')) == $customer->id ? 'selected' : '' }}>
                                     {{ $customer->company_name }}

@@ -29,7 +29,7 @@
                 <form method="GET" action="{{ route('customers.index') }}" class="mb-6">
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         <div>
-                            <x-input type="text" name="search" placeholder="Search customers..." value="{{ request('search') }}" />
+                            <x-input type="text" name="search" placeholder="{{ __('Search customers...') }}" value="{{ request('search') }}" />
                         </div>
                         <div>
                             <x-select name="status">
@@ -101,12 +101,12 @@
                                         @endif
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('customers.show', $customer) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">View</a>
-                                        <a href="{{ route('customers.edit', $customer) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 mr-3">Edit</a>
+                                        <a href="{{ route('customers.show', $customer) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">{{ __('View') }}</a>
+                                        <a href="{{ route('customers.edit', $customer) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 mr-3">{{ __('Edit') }}</a>
                                         <form action="{{ route('customers.destroy', $customer) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this customer?');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">Delete</button>
+                                            <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">{{ __('Delete') }}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -114,7 +114,7 @@
                                 <tr>
                                     <td colspan="5" class="px-6 py-12 text-center text-sm text-gray-500 dark:text-gray-400">
                                         <x-phosphor-user-circle-dashed width="48" height="48" class="mx-auto mb-3 text-gray-300 dark:text-gray-600" />
-                                        <p>No customers found.</p>
+                                        <p>{{ __('No customers found.') }}</p>
                                         <a href="{{ route('customers.create') }}" class="mt-2 inline-flex items-center text-blue-600 hover:text-blue-500 dark:text-blue-400">
                                             <x-phosphor-plus width="16" height="16" class="mr-1" />
                                             Create your first customer

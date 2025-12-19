@@ -139,15 +139,15 @@
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('super-admin.organizations.show', $organization) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">View</a>
-                                        <a href="{{ route('super-admin.organizations.edit', $organization) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300">Edit</a>
+                                        <a href="{{ route('super-admin.organizations.show', $organization) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">{{ __('View') }}</a>
+                                        <a href="{{ route('super-admin.organizations.edit', $organization) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300">{{ __('Edit') }}</a>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="6" class="px-6 py-12 text-center text-sm text-gray-500 dark:text-gray-400">
                                         <x-phosphor-building-office width="48" height="48" class="mx-auto mb-3 text-gray-300 dark:text-gray-600" />
-                                        <p>No organizations found.</p>
+                                        <p>{{ __('No organizations found.') }}</p>
                                     </td>
                                 </tr>
                             @endforelse

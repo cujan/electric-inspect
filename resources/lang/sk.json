@@ -324,4 +324,18 @@
   "days avg": "dní priemer",
   "parameters": "parametre",
   "to get started": "pre začiatok"
+  ,
+  "No customers found.": "Neboli nájdení žiadni zákazníci.",
+  "No equipment available for this customer": "Žiadne zariadenie dostupné pre tohto zákazníka",
+  "No equipment found.": "Žiadne zariadenie nebolo nájdené.",
+  "No inspections found.": "Neboli nájdené žiadne kontroly.",
+  "No technicians found.": "Neboli nájdení žiadni technici.",
+  "PDF": "PDF",
+  "Search customers...": "Hľadať zákazníkov...",
+  "Search equipment...": "Hľadať zariadenie...",
+  "Search inspections...": "Hľadať kontroly...",
+  "Select a customer": "Vyberte zákazníka",
+  "Select a customer first": "Najprv vyberte zákazníka",
+  "Select a technician (optional)": "Vyberte technika (voliteľné)",
+  "Select equipment": "Vyberte zariadenie"
 }

@@ -97,12 +97,12 @@
                                         {{ $technician->created_at->format('M d, Y') }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('users.show', $technician) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">View</a>
-                                        <a href="{{ route('users.edit', $technician) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 mr-3">Edit</a>
+                                        <a href="{{ route('users.show', $technician) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">{{ __('View') }}</a>
+                                        <a href="{{ route('users.edit', $technician) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 mr-3">{{ __('Edit') }}</a>
                                         <form action="{{ route('users.destroy', $technician) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this technician? This action cannot be undone.');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">Delete</button>
+                                            <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">{{ __('Delete') }}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -110,7 +110,7 @@
                                 <tr>
                                     <td colspan="{{ auth()->user()->isSuperAdmin() ? '6' : '5' }}" class="px-6 py-12 text-center text-sm text-gray-500 dark:text-gray-400">
                                         <x-phosphor-users width="48" height="48" class="mx-auto mb-3 text-gray-300 dark:text-gray-600" />
-                                        <p>No technicians found.</p>
+                                        <p>{{ __('No technicians found.') }}</p>
                                         <a href="{{ route('users.create') }}" class="mt-2 inline-flex items-center text-blue-600 hover:text-blue-500 dark:text-blue-400">
                                             <x-phosphor-plus width="16" height="16" class="mr-1" />
                                             Add your first technician

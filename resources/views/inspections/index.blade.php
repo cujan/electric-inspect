@@ -35,7 +35,7 @@
                 <form method="GET" action="{{ route('inspections.index') }}" class="mb-6">
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-4">
                         <div>
-                            <x-input type="text" name="search" placeholder="Search inspections..." value="{{ request('search') }}" />
+                            <x-input type="text" name="search" placeholder="{{ __('Search inspections...') }}" value="{{ request('search') }}" />
                         </div>
                         <div>
                             <x-select name="status">
@@ -154,19 +154,19 @@
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('inspections.show', $inspection) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">View</a>
-                                        <a href="{{ route('inspections.export.pdf', $inspection) }}" class="text-green-600 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300 mr-3" title="Export PDF">PDF</a>
+                                        <a href="{{ route('inspections.show', $inspection) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">{{ __('View') }}</a>
+                                        <a href="{{ route('inspections.export.pdf', $inspection) }}" class="text-green-600 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300 mr-3" title="Export PDF">{{ __('PDF') }}</a>
 
                                         @if(auth()->user()->isTechnician())
                                             @if(in_array($inspection->status, ['scheduled', 'in_progress']))
-                                                <a href="{{ route('inspections.edit', $inspection) }}" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 mr-3">Submit</a>
+                                                <a href="{{ route('inspections.edit', $inspection) }}" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 mr-3">{{ __('Submit') }}</a>
                                             @endif
                                         @else
-                                            <a href="{{ route('inspections.edit', $inspection) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 mr-3">Edit</a>
+                                            <a href="{{ route('inspections.edit', $inspection) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 mr-3">{{ __('Edit') }}</a>
                                             <form action="{{ route('inspections.destroy', $inspection) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this inspection?');">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">Delete</button>
+                                                <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">{{ __('Delete') }}</button>
                                             </form>
                                         @endif
                                     </td>
@@ -175,7 +175,7 @@
                                 <tr>
                                     <td colspan="6" class="px-6 py-12 text-center text-sm text-gray-500 dark:text-gray-400">
                                         <x-phosphor-clipboard-text width="48" height="48" class="mx-auto mb-3 text-gray-300 dark:text-gray-600" />
-                                        <p>No inspections found.</p>
+                                        <p>{{ __('No inspections found.') }}</p>
                                         <a href="{{ route('inspections.create') }}" class="mt-2 inline-flex items-center text-blue-600 hover:text-blue-500 dark:text-blue-400">
                                             <x-phosphor-plus width="16" height="16" class="mr-1" />
                                             Create your first inspection

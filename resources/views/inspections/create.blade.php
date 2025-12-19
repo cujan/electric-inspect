@@ -22,7 +22,7 @@
                         <div>
                             <x-label for="inspector_id" value="{{ __('Assign to Technician') }}" />
                             <x-select id="inspector_id" name="inspector_id" class="mt-1 block w-full">
-                                <option value="">Select a technician (optional)</option>
+                                <option value="">{{ __('Select a technician (optional)') }}</option>
                                 @foreach ($technicians as $technician)
                                     <option value="{{ $technician->id }}" {{ old('inspector_id') == $technician->id ? 'selected' : '' }}>
                                         {{ $technician->name }}
@@ -37,7 +37,7 @@
                         <div>
                             <x-label for="customer_id" value="{{ __('Customer') }}" />
                             <x-select id="customer_id" name="customer_id" class="mt-1 block w-full" required>
-                                <option value="">Select a customer</option>
+                                <option value="">{{ __('Select a customer') }}</option>
                                 @foreach ($customers as $customer)
                                     <option value="{{ $customer->id }}" {{ old('customer_id', request('customer_id')) == $customer->id ? 'selected' : '' }}>
                                         {{ $customer->company_name }}
@@ -50,7 +50,7 @@
                         <div>
                             <x-label for="equipment_id" value="{{ __('Equipment') }}" />
                             <x-select id="equipment_id" name="equipment_id" class="mt-1 block w-full" required disabled>
-                                <option value="">Select a customer first</option>
+                                <option value="">{{ __('Select a customer first') }}</option>
                             </x-select>
                             <x-error for='equipment_id' />
                         </div>
@@ -134,7 +134,7 @@
                 const customerId = this.value;
 
                 // Clear equipment dropdown
-                equipmentSelect.innerHTML = '<option value="">Select equipment</option>';
+                equipmentSelect.innerHTML = '<option value="">{{ __('Select equipment') }}</option>';
 
                 // Hide parameters info when customer changes
                 parametersInfo.style.display = 'none';
@@ -155,11 +155,11 @@
                         });
                     } else {
                         equipmentSelect.disabled = true;
-                        equipmentSelect.innerHTML = '<option value="">No equipment available for this customer</option>';
+                        equipmentSelect.innerHTML = '<option value="">{{ __('No equipment available for this customer') }}</option>';
                     }
                 } else {
                     equipmentSelect.disabled = true;
-                    equipmentSelect.innerHTML = '<option value="">Select a customer first</option>';
+                    equipmentSelect.innerHTML = '<option value="">{{ __('Select a customer first') }}</option>';
                 }
             });
 
