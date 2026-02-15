@@ -68,6 +68,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'certificate_number' => ['nullable', 'string', 'max:255', 'unique:users'],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
@@ -152,6 +153,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email,' . $user->id],
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
+            'certificate_number' => ['nullable', 'string', 'max:255', 'unique:users,certificate_number,' . $user->id],
         ]);
 
         // Only update password if provided

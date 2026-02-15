@@ -23,7 +23,7 @@ class ProfileController extends Controller
     {
         $user = $request->user();
 
-        $validated = $request->validate([
+        $rules = [
             'name' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
@@ -33,7 +33,19 @@ class ProfileController extends Controller
                 'max:255',
                 Rule::unique(User::class)->ignore($user->id),
             ],
-        ]);
+        ];
+
+        // Allow technicians to update certificate number
+        if ($user->isTechnician()) {
+            $rules['certificate_number'] = [
+                'nullable',
+                'string',
+                'max:255',
+                Rule::unique(User::class)->ignore($user->id),
+            ];
+        }
+
+        $validated = $request->validate($rules);
 
         $user->fill($validated);
 

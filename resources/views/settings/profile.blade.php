@@ -28,6 +28,10 @@
                 @endif
             </div>
 
+            @if (auth()->user()->isTechnician())
+                <x-input type="text" :label="__('Číslo osvedčenia')" :value="$user->certificate_number" name="certificate_number" autocomplete="off" />
+            @endif
+
             <div class="flex items-center gap-4">
                 <div class="flex items-center justify-end">
                     <x-button class="w-full">{{ __('Save') }}</x-button>

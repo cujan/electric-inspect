@@ -124,6 +124,11 @@
                         <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('Last Updated') }}</dt>
                         <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $user->updated_at->format('F d, Y') }}</dd>
                     </div>
+
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('Číslo osvedčenia') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $user->certificate_number ?? 'N/A' }}</dd>
+                    </div>
                 </dl>
             </div>
         </div>

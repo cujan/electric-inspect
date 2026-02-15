@@ -28,6 +28,13 @@
                             required
                         />
 
+                        <x-input
+                            type="text"
+                            :label="__('Číslo osvedčenia')"
+                            name="certificate_number"
+                            :value="old('certificate_number', $user->certificate_number)"
+                        />
+
                         <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
                             <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ __('Change Password') }}</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">{{ __('Leave blank to keep the current password') }}</p>
