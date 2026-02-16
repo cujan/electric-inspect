@@ -1,16 +1,22 @@
-
 # --- Laravel štandard ---
 /vendor/
 /node_modules/
-/public/build/
 /public/hot/
 /public/storage/
+
+# !!! Dôležité: build NEignorovať !!!
+# /public/build/     <-- TOTO MAZEME
+/public/build/*.map  <-- IBA .map ignorujeme
+
+/storage/*.key
 storage/logs/
 bootstrap/cache/
 storage/framework/cache/
 storage/framework/sessions/
 storage/framework/testing/
-storage/framework/views/
+
+# Skompilované Blade views - necommitovať
+storage/framework/views/*.php
 
 # --- Prostredia & tajomstvá ---
 .env
@@ -21,15 +27,15 @@ storage/framework/views/
 .phpunit.result.cache
 /.phpunit.cache
 
-# --- IDE & tooling (bezpečné ignorovať aj v produkcii) ---
+# --- IDE & tooling ---
 /.idea/
 /.vscode/
 /.fleet/
 /.nova/
 /.zed/
-.phpactor.json
+/phpactor.json
 
-# --- Lokálne dev / VM ---
+# --- Dev / VM ---
 Homestead.json
 Homestead.yaml
 
@@ -39,11 +45,10 @@ yarn-error.log*
 *.log
 coverage/
 
-# --- Docker & deploy ---
-backups/
+# --- Docker custom override ---
 docker-compose.override.yml
 
-# --- SSL certifikáty (ponechaj .gitkeep) ---
+# --- SSL certifikáty ---
 docker/ssl/*
 !docker/ssl/.gitkeep
 
@@ -51,8 +56,7 @@ docker/ssl/*
 /auth.json
 CLAUDE.MD
 
-# --- Lock súbory (POZOR: zvyčajne sa VERZUJÚ pre konzistentné buildy)
-# Ak ich nechceš verzovať, odkomentuj:
-# composer.lock
-# package-lock.json
-# yarn.lock
+# Lock files — odporúča sa verzovať:
+/*composer.lock
+/*package-lock.json
+/*yarn.lock
