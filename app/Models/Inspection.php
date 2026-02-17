@@ -17,6 +17,7 @@ class Inspection extends Model
         'customer_id',
         'equipment_id',
         'inspector_id',
+        'inspection_kind_id',
         'inspection_type',
         'inspection_date',
         'inspection_time',
@@ -62,6 +63,46 @@ class Inspection extends Model
     }
 
     /**
+     * Get the inspection kind (type of inspection).
+     */
+    public function inspectionKind(): BelongsTo
+    {
+        return $this->belongsTo(InspectionKind::class);
+    }
+
+    /**
+     * Get the inspection type through kind.
+     */
+    public function inspectionType()
+    {
+        return $this->inspectionKind?->inspectionType;
+    }
+
+    /**
+     * Get the components being inspected.
+     */
+    public function components(): HasMany
+    {
+        return $this->hasMany(InspectionComponent::class);
+    }
+
+    /**
+     * Get the basic inspection kind field values.
+     */
+    public function kindValues(): HasMany
+    {
+        return $this->hasMany(InspectionKindValue::class);
+    }
+
+    /**
+     * Get the parameter values for this inspection (legacy - use components/kindValues instead).
+     */
+    public function inspectionParameterValues(): HasMany
+    {
+        return $this->hasMany(InspectionParameterValue::class);
+    }
+
+    /**
      * Get all of the inspection's files.
      */
     public function files(): MorphMany
@@ -70,10 +111,10 @@ class Inspection extends Model
     }
 
     /**
-     * Get the parameter values for this inspection.
+     * Get the parameter values for this inspection (alias for backward compatibility).
      */
     public function parameterValues(): HasMany
     {
-        return $this->hasMany(InspectionParameterValue::class);
+        return $this->inspectionParameterValues();
     }
 }
